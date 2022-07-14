@@ -7,13 +7,29 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
+const feeling = () => {
+	console.log('Feeling');
+};
+
+const understanding = () => {
+	console.log('Understanding');
+};
+
+const support = () => {
+	console.log('Support');
+};
+
+const comments = () => {
+	console.log('Comments');
+};
+
 //? create a store using combine reducers
 const store = createStore(
 	combineReducers({
-		thing1,
-		thing2,
-		thing3,
-		thing4,
+		feeling,
+		understanding,
+		support,
+		comments,
 	})
 );
 
