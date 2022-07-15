@@ -1,7 +1,16 @@
 import { useState } from 'react';
 
 function Comment() {
+	//? hold value of the input field
 	const [comment, setComment] = useState('');
+
+	const handleSubmit = () => {
+		if (comment !== '') {
+			console.log('Not Empty');
+		} else {
+			console.log('Its EMPTY');
+		}
+	};
 
 	return (
 		<>
@@ -13,6 +22,7 @@ function Comment() {
 				onChange={(event) => setComment(event.target.value)}
 				value={comment}
 			/>
+			<button onClick={handleSubmit}>Submit</button>
 		</>
 	);
 }

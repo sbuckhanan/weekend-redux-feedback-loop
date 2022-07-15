@@ -18,13 +18,13 @@ function App() {
 				<Route path='/' exact>
 					<Feeling />
 				</Route>
-				<Route path='/understanding'>
+				<Route path='/understanding' exact>
 					<Understanding />
 				</Route>
-				<Route path='/support'>
+				<Route path='/support' exact>
 					<Support />
 				</Route>
-				<Route path='/comment'>
+				<Route path='/comment' exact>
 					<Comment />
 				</Route>
 			</div>
