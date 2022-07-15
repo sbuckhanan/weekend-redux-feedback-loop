@@ -5,10 +5,9 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
+import Comment from '../Comment/Comment';
 
 function App() {
-	const [comment, setComment] = useState('');
-
 	return (
 		<Router>
 			<div className='App'>
@@ -26,14 +25,7 @@ function App() {
 					<Support />
 				</Route>
 				<Route path='/comment'>
-					{/* <h2>Any comments you want to leave?</h2>
-					<label>Comment</label>
-					<input
-						type='text'
-						placeholder='This was great'
-						onChange={(event) => setComment(event.target.value)}
-						value={comment}
-					/> */}
+					<Comment />
 				</Route>
 			</div>
 		</Router>
