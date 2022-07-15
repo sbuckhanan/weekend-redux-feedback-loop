@@ -1,14 +1,17 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Support() {
 	const [support, setSupport] = useState(0);
 	const history = useHistory();
+	const dispatch = useDispatch();
 
 	const handleNext = () => {
 		if (support > 0) {
 			console.log('Not Empty');
 			history.push('/comment');
+			dispatch({ type: 'ADD_SUPPORT', payload: support });
 		} else {
 			console.log('Its EMPTY');
 		}
