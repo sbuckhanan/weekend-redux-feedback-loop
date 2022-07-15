@@ -1,11 +1,34 @@
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+	return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />;
+});
 
 function Support() {
 	const [support, setSupport] = useState(0);
 	const history = useHistory();
 	const dispatch = useDispatch();
+
+	const [open, setOpen] = useState(false);
+	const [position, setPosition] = useState({
+		vertical: 'top',
+		horizontal: 'center',
+	});
+
+	const { vertical, horizontal } = position;
+
+	const handleClick = () => {
+		setOpen(true);
+	};
+
+	const handleClose = (event, reason) => {
+		setOpen(false);
+	};
 
 	const handleNext = () => {
 		if (support > 0) {
@@ -13,12 +36,17 @@ function Support() {
 			history.push('/comment');
 			dispatch({ type: 'ADD_SUPPORT', payload: support });
 		} else {
-			console.log('Its EMPTY');
+			handleClick();
 		}
 	};
 
 	return (
 		<>
+			<Snackbar open={open} onClose={handleClose} anchorOrigin={{ vertical, horizontal }}>
+				<Alert onClose={handleClose} severity='error' sx={{ width: '100%' }}>
+					Number must be between 1-10
+				</Alert>
+			</Snackbar>
 			<h2>How well are you being supported?</h2>
 			<label>Support</label>
 			<input
