@@ -1,12 +1,17 @@
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Review() {
 	const history = useHistory();
+	const feeling = useSelector((state) => state.feeling);
+	const understanding = useSelector((state) => state.understanding);
+	const support = useSelector((state) => state.support);
+	const comments = useSelector((state) => state.comments);
 
 	const handleSubmit = () => {
 		axios
-			.post('/feedback')
+			.post('/feedback', { feeling, understanding, support, comments })
 			.then(() => {
 				console.log('POSTED');
 			})
@@ -20,10 +25,10 @@ function Review() {
 		<>
 			<h1>REVIEW YOUR FEEDBACK</h1>
 			<ul>
-				<li>FEELINGS</li>
-				<li>UNDERSTANDING</li>
-				<li>SUPPORT</li>
-				<li>COMMENTS</li>
+				<li>{feeling}</li>
+				<li>{understanding}</li>
+				<li>{support}</li>
+				<li>{comments}</li>
 			</ul>
 			<button onClick={handleSubmit}>SUBMIT</button>
 		</>
