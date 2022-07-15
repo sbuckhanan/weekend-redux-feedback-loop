@@ -21,14 +21,16 @@ function Comment() {
 	return (
 		<>
 			<h2>Any comments you want to leave?</h2>
-			<label>Comment</label>
+			<label className='label'>Comment</label>
 			<input
+				className='input'
 				type='text'
 				placeholder='This was great'
 				onChange={(event) => setComment(event.target.value)}
 				value={comment}
 			/>
 			<button onClick={handleNext}>NEXT</button>
+			<button onClick={() => history.push('/support')}>Go Back</button>
 		</>
 	);
 }

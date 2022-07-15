@@ -48,8 +48,9 @@ function Feeling() {
 				</Alert>
 			</Snackbar>
 			<h2>How Are You Feeling Today?</h2>
-			<label>Feeling</label>
+			<label className='label'>Feeling</label>
 			<input
+				className='input'
 				type='number'
 				placeholder='3'
 				onChange={(event) => setFeeling(event.target.value)}

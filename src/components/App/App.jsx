@@ -8,6 +8,7 @@ import Support from '../Support/Support';
 import Comment from '../Comment/Comment';
 import Review from '../Review/Review';
 import NewReview from '../NewReview/NewReview';
+import Admin from '../Admin/Admin';
 
 function App() {
 	return (
@@ -34,6 +35,9 @@ function App() {
 				</Route>
 				<Route path='/new' exact>
 					<NewReview />
+				</Route>
+				<Route path='/admin' exact>
+					<Admin />
 				</Route>
 			</div>
 		</Router>

@@ -48,8 +48,9 @@ function Support() {
 				</Alert>
 			</Snackbar>
 			<h2>How well are you being supported?</h2>
-			<label>Support</label>
+			<label className='label'>Support</label>
 			<input
+				className='input'
 				type='number'
 				placeholder='10'
 				onChange={(event) => setSupport(event.target.value)}
@@ -58,6 +59,7 @@ function Support() {
 				min='0'
 			/>
 			<button onClick={handleNext}>NEXT</button>
+			<button onClick={() => history.push('/understanding')}>Go Back</button>
 		</>
 	);
 }

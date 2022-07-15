@@ -31,6 +31,7 @@ function Review() {
 				<li>Comments: {comments}</li>
 			</ul>
 			<button onClick={handleSubmit}>SUBMIT</button>
+			<button onClick={() => history.push('/comment')}>Go Back</button>
 		</>
 	);
 }
