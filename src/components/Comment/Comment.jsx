@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Comment() {
 	//? hold value of the input field
 	const [comment, setComment] = useState('');
+	const history = useHistory();
 
 	const handleNext = () => {
 		console.log('Ayyo');

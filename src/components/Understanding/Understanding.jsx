@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Understanding() {
 	const [understanding, setUnderstanding] = useState(0);
+	const history = useHistory();
 
 	const handleNext = () => {
 		if (understanding > 0) {

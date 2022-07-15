@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Feeling() {
 	const [feeling, setFeeling] = useState(0);
+	const history = useHistory();
 
 	const handleNext = () => {
 		if (feeling > 0) {

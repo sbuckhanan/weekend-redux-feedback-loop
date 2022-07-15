@@ -1,4 +1,8 @@
+import { useHistory } from 'react-router-dom';
+
 function NewReview() {
+	const history = useHistory();
+
 	return (
 		<>
 			<h1>Thanks for the feedback</h1>
