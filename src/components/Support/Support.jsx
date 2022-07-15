@@ -8,6 +8,7 @@ function Support() {
 	const handleNext = () => {
 		if (support > 0) {
 			console.log('Not Empty');
+			history.push('/comment');
 		} else {
 			console.log('Its EMPTY');
 		}

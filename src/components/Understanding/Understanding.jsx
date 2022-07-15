@@ -8,6 +8,7 @@ function Understanding() {
 	const handleNext = () => {
 		if (understanding > 0) {
 			console.log('Not Empty');
+			history.push('/support');
 		} else {
 			console.log('Its EMPTY');
 		}

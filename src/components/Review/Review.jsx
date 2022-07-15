@@ -1,6 +1,11 @@
+import { useHistory } from 'react-router-dom';
+
 function Review() {
+	const history = useHistory();
+
 	const handleSubmit = () => {
 		console.log('POST HERE TOO ');
+		history.push('/new');
 	};
 
 	return (

@@ -8,6 +8,7 @@ function Comment() {
 
 	const handleNext = () => {
 		console.log('Ayyo');
+		history.push('/review');
 	};
 
 	return (

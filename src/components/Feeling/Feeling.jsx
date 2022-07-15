@@ -7,6 +7,7 @@ function Feeling() {
 
 	const handleNext = () => {
 		if (feeling > 0) {
+			history.push('/understanding');
 			console.log('Not Empty');
 		} else {
 			console.log('Its EMPTY');
