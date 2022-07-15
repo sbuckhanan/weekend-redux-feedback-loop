@@ -7,20 +7,40 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
-const feeling = () => {
-	console.log('Feeling');
+const feeling = (state = 0, action) => {
+	switch (action.type) {
+		case 'ADD_FEELING':
+			return action.payload;
+		default:
+			return state;
+	}
 };
 
-const understanding = () => {
-	console.log('Understanding');
+const understanding = (state = 0, action) => {
+	switch (action.type) {
+		case 'ADD_UNDERSTANDING':
+			return action.payload;
+		default:
+			return state;
+	}
 };
 
-const support = () => {
-	console.log('Support');
+const support = (state = 0, action) => {
+	switch (action.type) {
+		case 'ADD_SUPPORT':
+			return action.payload;
+		default:
+			return state;
+	}
 };
 
-const comments = () => {
-	console.log('Comments');
+const comments = (state = '', action) => {
+	switch (action.type) {
+		case 'ADD_COMMENT':
+			return action.payload;
+		default:
+			return state;
+	}
 };
 
 //? create a store using combine reducers
@@ -30,7 +50,8 @@ const store = createStore(
 		understanding,
 		support,
 		comments,
-	})
+	}),
+	applyMiddleware(logger)
 );
 
 //? add provider
