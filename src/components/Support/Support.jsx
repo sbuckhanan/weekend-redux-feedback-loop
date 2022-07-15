@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import Button from '@mui/material/Button';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />;
@@ -58,8 +59,14 @@ function Support() {
 				max='10'
 				min='0'
 			/>
-			<button onClick={handleNext}>NEXT</button>
-			<button onClick={() => history.push('/understanding')}>Go Back</button>
+			<div className='button'>
+				<Button variant='contained' onClick={() => history.push('/understanding')}>
+					GO BACK
+				</Button>
+				<Button variant='contained' onClick={handleNext}>
+					NEXT
+				</Button>
+			</div>
 		</>
 	);
 }

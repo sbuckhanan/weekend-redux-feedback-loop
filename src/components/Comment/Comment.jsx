@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function Comment() {
 	//? hold value of the input field
@@ -29,8 +30,14 @@ function Comment() {
 				onChange={(event) => setComment(event.target.value)}
 				value={comment}
 			/>
-			<button onClick={handleNext}>NEXT</button>
-			<button onClick={() => history.push('/support')}>Go Back</button>
+			<div className='button'>
+				<Button variant='contained' onClick={() => history.push('/support')}>
+					GO BACK
+				</Button>
+				<Button variant='contained' onClick={handleNext}>
+					NEXT
+				</Button>
+			</div>
 		</>
 	);
 }

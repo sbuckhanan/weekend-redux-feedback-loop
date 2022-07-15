@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function Review() {
 	const history = useHistory();
@@ -30,8 +31,16 @@ function Review() {
 				<li>Support: {support}</li>
 				<li>Comments: {comments}</li>
 			</ul>
-			<button onClick={handleSubmit}>SUBMIT</button>
-			<button onClick={() => history.push('/comment')}>Go Back</button>
+			<div className='button'>
+				<Button variant='contained' onClick={() => history.push('/comment')}>
+					GO BACK
+				</Button>
+				<Button variant='contained' onClick={handleSubmit}>
+					SUBMIT
+				</Button>
+			</div>
+			{/* <button onClick={handleSubmit}>SUBMIT</button>
+			<button onClick={() => history.push('/comment')}>Go Back</button> */}
 		</>
 	);
 }
