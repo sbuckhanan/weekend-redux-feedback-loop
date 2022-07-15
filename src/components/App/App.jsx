@@ -3,10 +3,9 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
 
 function App() {
-	// const [feeling, setFeeling] = useState(0);
-	const [understanding, setUnderstanding] = useState(0);
 	const [support, setSupport] = useState(0);
 	const [comment, setComment] = useState('');
 
@@ -21,15 +20,7 @@ function App() {
 					<Feeling />
 				</Route>
 				<Route path='/understanding'>
-					<h2>How well are you understanding the content?</h2>
-					<label>Understanding</label>
-					<input
-						type='number'
-						placeholder='8'
-						onChange={(event) => setUnderstanding(event.target.value)}
-						value={understanding}
-						max='10'
-					/>
+					<Understanding />
 				</Route>
 				<Route path='/support'>
 					<h2>How well are you being supported?</h2>
