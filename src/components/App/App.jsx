@@ -9,8 +9,22 @@ import Comment from '../Comment/Comment';
 import Review from '../Review/Review';
 import NewReview from '../NewReview/NewReview';
 import Admin from '../Admin/Admin';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 function App() {
+	const dispatch = useDispatch();
+	const getOrders = () => {
+		axios
+			.get('/feedback')
+			.then((response) => {
+				dispatch({ type: 'GET_ORDERS', payload: response.data });
+			})
+			.catch((err) => alert('Error with get', err));
+	};
+
+	useEffect(() => getOrders(), []);
+
 	return (
 		<Router>
 			<div className='App'>

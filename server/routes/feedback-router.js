@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
 	pool
 		.query(sqlString)
 		.then((result) => {
+			res.send(result.rows);
 			res.sendStatus(201);
 		})
 		.catch((err) => {

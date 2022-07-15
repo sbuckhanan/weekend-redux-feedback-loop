@@ -7,6 +7,15 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
+const orders = (state = [], action) => {
+	switch (action.type) {
+		case 'GET_ORDERS':
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
 const feeling = (state = 0, action) => {
 	switch (action.type) {
 		case 'ADD_FEELING':
@@ -50,6 +59,7 @@ const store = createStore(
 		understanding,
 		support,
 		comments,
+		orders,
 	}),
 	applyMiddleware(logger)
 );
