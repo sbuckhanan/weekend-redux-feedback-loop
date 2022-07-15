@@ -25,10 +25,10 @@ function Review() {
 		<>
 			<h1>REVIEW YOUR FEEDBACK</h1>
 			<ul>
-				<li>{feeling}</li>
-				<li>{understanding}</li>
-				<li>{support}</li>
-				<li>{comments}</li>
+				<li>Feeling: {feeling}</li>
+				<li>Understanding: {understanding}</li>
+				<li>Support: {support}</li>
+				<li>Comments: {comments}</li>
 			</ul>
 			<button onClick={handleSubmit}>SUBMIT</button>
 		</>
