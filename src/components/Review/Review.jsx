@@ -5,7 +5,14 @@ function Review() {
 	const history = useHistory();
 
 	const handleSubmit = () => {
-		axios.post('');
+		axios
+			.post('/feedback')
+			.then(() => {
+				console.log('POSTED');
+			})
+			.catch((err) => {
+				alert('Error posting', err);
+			});
 		history.push('/new');
 	};
 
