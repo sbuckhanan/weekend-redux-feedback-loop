@@ -56,3 +56,7 @@ h4 {
 .input:focus {
 	color: #05060fc2;
 }
+
+.button {
+	margin-top: 10px;
+}

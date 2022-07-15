@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import AdminItem from '../AdminItem/AdminItem';
+import './Admin.css';
 
 function Admin() {
 	const orders = useSelector((state) => state.orders);
@@ -7,7 +8,7 @@ function Admin() {
 	return (
 		<table>
 			<thead>
-				<tr>
+				<tr className='headRow'>
 					<th>Feeling</th>
 					<th>Comprehension</th>
 					<th>Support</th>

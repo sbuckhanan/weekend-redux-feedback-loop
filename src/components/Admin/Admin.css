@@ -1,0 +1,19 @@
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.633);
+	color: white;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+	text-align: center;
+}
+
+.headRow {
+	background-color: blue;
+}

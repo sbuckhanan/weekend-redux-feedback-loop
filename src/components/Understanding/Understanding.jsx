@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Button from '@mui/material/Button';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />;
@@ -59,12 +59,14 @@ function Understanding() {
 				max='10'
 				min='0'
 			/>
-			{/* <button onClick={handleNext}>NEXT</button> */}
-			<div className='nextButton' onClick={handleNext}>
-				<ArrowForwardIcon className='arrow' />
-				<h3 className='arrowText'>NEXT</h3>
+			<div className='button'>
+				<Button variant='contained' onClick={() => history.push('/')}>
+					GO BACK
+				</Button>
+				<Button variant='contained' onClick={handleNext}>
+					NEXT
+				</Button>
 			</div>
-			<button onClick={() => history.push('/')}>Go Back</button>
 		</>
 	);
 }
