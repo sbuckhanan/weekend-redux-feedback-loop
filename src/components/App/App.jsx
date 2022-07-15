@@ -4,9 +4,9 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
 
 function App() {
-	const [support, setSupport] = useState(0);
 	const [comment, setComment] = useState('');
 
 	return (
@@ -23,25 +23,17 @@ function App() {
 					<Understanding />
 				</Route>
 				<Route path='/support'>
-					<h2>How well are you being supported?</h2>
-					<label>Support</label>
-					<input
-						type='number'
-						placeholder='10'
-						onChange={(event) => setSupport(event.target.value)}
-						value={support}
-						max='10'
-					/>
+					<Support />
 				</Route>
 				<Route path='/comment'>
-					<h2>Any comments you want to leave?</h2>
+					{/* <h2>Any comments you want to leave?</h2>
 					<label>Comment</label>
 					<input
 						type='text'
 						placeholder='This was great'
 						onChange={(event) => setComment(event.target.value)}
 						value={comment}
-					/>
+					/> */}
 				</Route>
 			</div>
 		</Router>
