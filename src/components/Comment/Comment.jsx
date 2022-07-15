@@ -1,14 +1,21 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Comment() {
 	//? hold value of the input field
 	const [comment, setComment] = useState('');
 	const history = useHistory();
+	const dispatch = useDispatch();
 
 	const handleNext = () => {
-		console.log('Ayyo');
-		history.push('/review');
+		if (comment !== '') {
+			console.log('Ayyo');
+			history.push('/review');
+			dispatch({ type: 'ADD_COMMENT', payload: comment });
+		} else {
+			history.push('/review');
+		}
 	};
 
 	return (

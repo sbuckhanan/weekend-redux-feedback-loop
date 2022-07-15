@@ -1,14 +1,17 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Understanding() {
 	const [understanding, setUnderstanding] = useState(0);
 	const history = useHistory();
+	const dispatch = useDispatch();
 
 	const handleNext = () => {
 		if (understanding > 0) {
 			console.log('Not Empty');
 			history.push('/support');
+			dispatch({ type: 'ADD_UNDERSTANDING', payload: understanding });
 		} else {
 			console.log('Its EMPTY');
 		}

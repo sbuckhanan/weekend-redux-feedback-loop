@@ -1,10 +1,11 @@
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 function Review() {
 	const history = useHistory();
 
 	const handleSubmit = () => {
-		console.log('POST HERE TOO ');
+		axios.post('');
 		history.push('/new');
 	};
 
