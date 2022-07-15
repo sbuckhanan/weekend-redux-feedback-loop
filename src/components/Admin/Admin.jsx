@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import AdminItem from '../AdminItem/AdminItem';
 
 function Admin() {
 	const orders = useSelector((state) => state.orders);
@@ -15,13 +16,9 @@ function Admin() {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
+				{orders.map((order) => (
+					<AdminItem order={order} key={order.id} />
+				))}
 			</tbody>
 		</table>
 	);

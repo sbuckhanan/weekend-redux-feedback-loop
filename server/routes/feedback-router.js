@@ -3,13 +3,12 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
-	console.log('get');
 	const sqlString = 'SELECT * FROM feedback;';
 	pool
 		.query(sqlString)
 		.then((result) => {
 			res.send(result.rows);
-			res.sendStatus(201);
+			// res.sendStatus(201);
 		})
 		.catch((err) => {
 			console.log('Error in post', err);
