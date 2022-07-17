@@ -59,7 +59,7 @@ function App() {
 					<NewReview />
 				</Route>
 				<Route path='/admin' exact>
-					<Admin />
+					<Admin getOrders={getOrders} />
 				</Route>
 			</div>
 		</Router>

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import AdminItem from '../AdminItem/AdminItem';
 import './Admin.css';
 
-function Admin() {
+function Admin({ getOrders }) {
 	const orders = useSelector((state) => state.orders);
 
 	return (
@@ -18,7 +18,7 @@ function Admin() {
 			</thead>
 			<tbody>
 				{orders.map((order) => (
-					<AdminItem order={order} key={order.id} />
+					<AdminItem order={order} key={order.id} getOrders={getOrders} />
 				))}
 			</tbody>
 		</table>

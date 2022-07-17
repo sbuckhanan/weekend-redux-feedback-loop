@@ -32,4 +32,18 @@ router.post('/', (req, res) => {
 		});
 });
 
+router.delete('/:id', (req, res) => {
+	const deleteId = req.params.id;
+	const sqlString = 'DELETE FROM feedback WHERE id = $1;';
+	pool
+		.query(sqlString, [deleteId])
+		.then((result) => {
+			res.sendStatus(201);
+		})
+		.catch((err) => {
+			console.log('Error in post', err);
+			res.sendStatus(500);
+		});
+});
+
 module.exports = router;
