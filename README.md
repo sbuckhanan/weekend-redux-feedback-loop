@@ -12,6 +12,10 @@ This application is a form that collects daily feedback from a user. It has the 
 
 ![videodemo](feedback.gif)
 
+## LINK TO DEPLOYED SITE
+
+https://nameless-oasis-23491.herokuapp.com/#/
+
 ### Prerequisites
 
 1. Node.js
