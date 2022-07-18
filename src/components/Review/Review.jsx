@@ -10,11 +10,12 @@ function Review() {
 	const support = useSelector((state) => state.support);
 	const comments = useSelector((state) => state.comments);
 
-	const handleSubmit = () => {
+	const handleSubmit = ({ getOrders }) => {
 		axios
 			.post('/feedback', { feeling, understanding, support, comments })
 			.then(() => {
 				console.log('POSTED');
+				getOrders();
 			})
 			.catch((err) => {
 				alert('Error posting', err);

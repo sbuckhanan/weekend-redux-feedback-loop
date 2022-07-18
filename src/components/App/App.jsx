@@ -52,7 +52,7 @@ function App() {
 				<Route path='/comment' exact>
 					<Comment />
 				</Route>
-				<Route path='/review' exact>
+				<Route path='/review' getOrders={getOrders} exact>
 					<Review />
 				</Route>
 				<Route path='/new' exact>
